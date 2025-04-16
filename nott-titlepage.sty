@@ -1,0 +1,71 @@
+\ProvidesPackage{nott-titlepage}
+\RequirePackage{graphicx}
+
+\setlength{\parindent}{0cm}
+
+\newcommand{\faculty}[1]{\renewcommand{\faculty}{#1}}
+\newcommand{\department}[1]{\renewcommand{\department}{#1}}
+\newcommand{\modulecode}[1]{\renewcommand{\modulecode}{#1}}
+\newcommand{\modulename}[1]{\renewcommand{\modulename}{#1}}
+\newcommand{\coursework}[1]{\renewcommand{\coursework}{#1}}
+\newcommand{\supname}[1]{\renewcommand{\supname}{#1}}
+\newcommand{\studentid}[1]{\renewcommand{\studentid}{#1}}
+
+\renewcommand{\maketitle}{
+\begin{titlepage}
+    \newgeometry{
+        inner=2cm,
+        outer=2cm,
+        top=3cm,
+        bottom=3cm,
+    }
+    \begin{center}
+    
+        \includegraphics[width=0.50\linewidth]{figures/Nottingham.png}
+
+        \vspace{8mm}
+        \large\textsc{\faculty} \\
+        \large\textsc{\department}
+        
+        \vspace{5mm}
+        \Large\textsc{\modulecode}
+
+        \vspace{-1mm}
+        \Large\textsc{\modulename}
+
+        \rule{0.9\linewidth}{0.5pt}
+        
+        \vspace{12mm}
+        \LARGE\textbf{\@title}
+
+        \vspace{10mm}
+        \Large\textsc{\coursework}
+    
+        \vspace{12mm}
+        \begin{minipage}[t]{0.45\linewidth}
+			\begin{flushleft} 
+                \large
+				\emph{Author} \\
+				\@author \\
+                \studentid
+			\end{flushleft}
+		\end{minipage}%
+        \begin{minipage}[t]{0.45\linewidth}
+			\begin{flushright}
+                \large
+				\emph{Module Convenor} \\
+				\supname
+			\end{flushright}
+		\end{minipage}%
+
+        \vfill
+
+        \rule{0.9\linewidth}{0.5pt}
+        
+        \vspace{5mm}
+        \large\textsc{\@date}
+
+    \end{center}
+    \restoregeometry
+\end{titlepage}
+}

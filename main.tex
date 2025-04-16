@@ -1,0 +1,63 @@
+%!TEX program = lualatex
+% ^ quick fix for documents without bibliography
+
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{preamble}
+
+% title page details
+\faculty{Faculty of Science and Engineering}
+\department{Department of Electrical and Electronic Engineering}
+\modulecode{EEEE8888}
+\modulename{Module Name}
+\title{Title}
+\coursework{- Coursework 8 -}
+\author{Max Koo Yan Jie}
+\studentid{20620542}
+\supname{Dr Who?}
+\date{August 2003}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\setlength\parindent{36pt}
+
+\maketitle
+
+\pagenumbering{roman}
+\nsection{Abstract}
+
+\clearpage
+
+% table of contents
+\begin{large}
+    \tableofcontents
+\end{large}
+
+\pagebreak
+
+% main matter
+\pagenumbering{arabic}
+
+\section{Introduction} \label{sec:introduction}
+\input{sections/1_Introduction}
+
+\lipsum[1]
+
+\input{tables/table_template.tex}
+
+\lipsum[2-3]
+
+\fig{0.8}{Nottingham.png}{Lorem ipsum caption.}{nottingham_logo}{ht}
+
+\lipsum[4-5]
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{references}
+
+% \clearpage
+% \appendix
+% \section{First Appendix} \label{app:first_appendix}
+% \input{sections/A_First_Appendix}
+
+\end{document}
