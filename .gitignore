@@ -7,3 +7,6 @@ main.toc
 main.blg
 main.fdb_latexmk
 main.fls
+main.synctex(busy)
+main.bcf
+main.run.xml
